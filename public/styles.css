@@ -182,6 +182,29 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for separation */
 }
 
+/* Header Buttons Container */
+.header-buttons {
+    display: flex; /* Align buttons horizontally */
+    gap: 10px; /* Add spacing between buttons */
+    align-items: center; /* Vertically align buttons */
+}
+
+/* Home Button */
+.home-button {
+    color: black; /* Black text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Same padding as the logout button */
+    font-size: 1rem; /* Same font size as the logout button */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    background: none; /* No background */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.home-button:hover {
+    color: #007BFF; /* Change text color on hover */
+}
+
 /* Dashboard Title */
 .dashboard-title {
     font-family: 'Horizon', sans-serif; /* Use Horizon font */
@@ -204,6 +227,7 @@ h1 {
     display: flex;
     flex-direction: column; /* Allow header and content stacking */
 }
+
 .dashboard-nav {
     list-style: none;
     padding: 0;

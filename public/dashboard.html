@@ -23,34 +23,34 @@
     <main class="dashboard-content">
         <section class="dashboard-left-column">
             <!-- Task Summary Icon -->
-            <a href="task.html" class="dashboard-icon-link">
+            <a href="task.html" class="dashboard-icon-link" onclick="hideDashboardText(event)">
                 <div class="dashboard-icon">
                     <i class="fas fa-tasks"></i>
                 </div>
             </a>
-    
+
             <!-- Upcoming Deadlines Icon -->
-            <a href="deadlines.html" class="dashboard-icon-link">
+            <a href="deadlines.html" class="dashboard-icon-link" onclick="hideDashboardText(event)">
                 <div class="dashboard-icon">
                     <i class="fas fa-calendar-alt"></i>
                 </div>
             </a>
-    
+
             <!-- Team Collaboration Icon -->
-            <a href="collaboration.html" class="dashboard-icon-link">
+            <a href="collaboration.html" class="dashboard-icon-link" onclick="hideDashboardText(event)">
                 <div class="dashboard-icon">
                     <i class="fas fa-users"></i>
                 </div>
             </a>
-    
+
             <!-- Profile Settings Icon -->
-            <a href="profile.html" class="dashboard-icon-link">
+            <a href="profile.html" class="dashboard-icon-link" onclick="hideDashboardText(event)">
                 <div class="dashboard-icon">
                     <i class="fas fa-user-cog"></i>
                 </div>
             </a>
         </section>
-        <div class="dashboard-text">
+        <div id="dashboard-text" class="dashboard-text">
             <div class="v2_42">TO-DO</div>
             <div class="v2_43">STATUS</div>
             <div class="v2_45">IN PROGRESS</div>
@@ -67,6 +67,28 @@
             // Redirect to the login page
             window.location.href = "index.html";
         }
+        function redirectToHome() {
+            window.location.href = "dashboard.html"; // Redirect to the dashboard
+        }
+    </script>
+    
+
+    <script>
+       function hideDashboardText(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    // Hide only the dashboard text section
+    const dashboardText = document.getElementById('dashboard-text');
+    if (dashboardText) {
+        dashboardText.style.display = 'none'; // Hide the text section
+    }
+
+    // Redirect to the selected page after a short delay
+    const target = event.currentTarget.getAttribute('href');
+    setTimeout(() => {
+        window.location.href = target;
+    }, 300); // 300ms delay
+}
     </script>
 
     <!-- Footer Section -->
